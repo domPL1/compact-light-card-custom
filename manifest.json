@@ -1,9 +1,9 @@
 {
-  "domain": "compact_light_card",
-  "name": "Compact Light Card",
-  "documentation": "https://github.com/goggybox/compact-light-card",
+  "domain": "compact_light_card_Custom",
+  "name": "Compact Light Card Custom",
+  "documentation": "https://github.com/domPL1/compact-light-card-custom",
   "version": "0.1.0",
   "dependencies": [],
-  "codeowners": ["@goggybox"],
+  "codeowners": ["@domPL1"],
   "requirements": []
 }
