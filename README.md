@@ -1,5 +1,5 @@
 # Compact Light Card Custom
-[![GitHub Release](https://img.shields.io/github/v/release/goggybox/compact-light-card?include_prereleases&style=flat-square)](https://github.com/goggybox/compact-light-card/releases)
+[![GitHub Release](https://img.shields.io/github/v/release/domPL1/compact-light-card-custom?include_prereleases&style=flat-square)](https://github.com/domPL1/compact-light-card-custom/releases)
 [![HACS Compatible](https://img.shields.io/badge/HACS-Default-blue.svg?style=flat-square)](https://github.com/hacs/integration)
 
 A clean, compact, and highly customisable light card for Home Assistant.
@@ -57,16 +57,9 @@ Examples of the customisations:
 
 ## Installation (using HACS)
 
-Use this link to open the repository in HACS:
-
-[![Open repo in HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=goggybox&repository=compact-light-card)
-
-Alternatively:
-
 - Open HACS in Home Assistant.
-- Search for "Compact Light Card".
-- Ensure the result has the creator as "goggybox".
+- Add this repository via custom repository
 - Click download!
 
 ## License
-MIT © [goggybox](https://github.com/goggybox)
+MIT © [domPL1](https://github.com/domPL1)
