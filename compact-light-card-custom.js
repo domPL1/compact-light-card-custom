@@ -1,9 +1,9 @@
 /*
- * Compact Light Card
+ * Compact Light Card Custom
  *
  * A clean, compact, and highly customisable light card for Home Assistant.
  *
- * Author: goggybox
+ * Author: domPL1
  * License: MIT
  */
 
