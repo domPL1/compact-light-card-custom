@@ -674,6 +674,9 @@ class CompactLightCardCustom extends HTMLElement {
 
     // touch start
     brightnessEl.addEventListener("touchstart", (e) => {
+      if (!this.supportsBrightness || (this.state !== "on" || !this.config.dragToTurnOn)) {
+        return;
+      }
       e.preventDefault();
       const touch = e.touches[0];
       onDragStart(touch.clientX);
