@@ -8,10 +8,10 @@
  */
 
 
-console.log("compact-light-card.js loaded!");
+console.log("compact-light-card-custom-custom.js loaded!");
 window.left_offset = 17;
 
-class CompactLightCard extends HTMLElement {
+class CompactLightCardCustom extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -193,6 +193,8 @@ class CompactLightCard extends HTMLElement {
     this.config = {
       ...config,
       icon: config.icon || "mdi:lightbulb",
+      service: config.service || "light",
+      dragToTurnOn: config.dragToTurnOn || true,
       name: config.name,
       glow: config.glow !== false,
       icon_border: config.icon_border === true,
@@ -392,7 +394,7 @@ class CompactLightCard extends HTMLElement {
         break;
 
       case "toggle":
-        this._hass.callService("light", "toggle", {
+        this._hass.callService(this.config.service, "toggle", {
           entity_id: entityId
         });
         break;
@@ -452,7 +454,7 @@ class CompactLightCard extends HTMLElement {
         break;
 
       default:
-        console.warn("Compact-Light-Card: Unsupported action: ", action);
+        console.warn("compact-light-card-custom: Unsupported action: ", action);
 
     }
   }
@@ -519,11 +521,7 @@ class CompactLightCard extends HTMLElement {
       if (!stateObj) return;
 
       // toggle light
-      if (stateObj.state == "on") {
-        hass.callService("light", "turn_off", { entity_id: entityId });
-      } else {
-        hass.callService("light", "turn_on", { entity_id: entityId });
-      }
+        hass.callService(this.config.service, "toggle", { entity_id: entityId });
     });
 
     // register arrow click
@@ -601,7 +599,7 @@ class CompactLightCard extends HTMLElement {
 
     // shared drag start logic
     const onDragStart = (clientX) => {
-      if (!this.supportsBrightness) {
+      if (!this.supportsBrightness || (this.state !== "on" || !this.config.dragToTurnOn)) {
         return;
       }
       this.isDragging = true;
@@ -803,12 +801,12 @@ class CompactLightCard extends HTMLElement {
 }
 
 // register card
-customElements.define('compact-light-card', CompactLightCard);
+customElements.define('compact-light-card-custom', CompactLightCardCustom);
 
 // make it appear in visual card picker
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "compact-light-card",
-  name: "Compact Light Card",
+  type: "compact-light-card-custom",
+  name: "Compact Light Card Custom",
   description: "A more compact light card.",
 });
