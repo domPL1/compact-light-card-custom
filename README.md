@@ -1,4 +1,4 @@
-# Compact Light Card
+# Compact Light Card Custom
 [![GitHub Release](https://img.shields.io/github/v/release/goggybox/compact-light-card?include_prereleases&style=flat-square)](https://github.com/goggybox/compact-light-card/releases)
 [![HACS Compatible](https://img.shields.io/badge/HACS-Default-blue.svg?style=flat-square)](https://github.com/hacs/integration)
 
@@ -20,6 +20,7 @@ The image above shows the default configuration for the card. By default, the ca
 The following customisations are available:
 
 - `name: "Light 1"` sets the displayed name to "Light 1".
+- `service: switch` will call service "switch" with action toggle when clicked on icon
 - `primary_colour: "#dbdbdb"` sets the card's primary colour to "#dbdbdb".
 - `secondary_colour: "#808080"` sets the card's secondary colour to "#808080". 
 - `glow: false` disables the glow around the card.
